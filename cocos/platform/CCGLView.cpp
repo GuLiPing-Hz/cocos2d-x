@@ -196,7 +196,7 @@ const Size& GLView::getDesignResolutionSize() const
     return _designResolutionSize;
 }
 
-const Size& GLView::getFrameSize() const
+Size GLView::getFrameSize() const
 {
     return _screenSize;
 }
@@ -217,6 +217,11 @@ Rect GLView::getVisibleRect() const
     ret.size = getVisibleSize();
     ret.origin = getVisibleOrigin();
     return ret;
+}
+
+Rect GLView::getSafeAreaRect() const
+{
+    return getVisibleRect();
 }
 
 Size GLView::getVisibleSize() const
